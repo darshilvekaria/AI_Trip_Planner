@@ -1,3 +1,15 @@
+```
+This is an Agentic AI project that uses Langgraph for planning a complete E2E trip to any countries based on number of days, its up to date currency rate and best places to visit within that country.
+
+LLM model performs various API calls to generate final output:
+- Weather API (current and forecasted weather)
+- Places search using google places API or Tavily search API
+- Currency converter API
+- Overall expense calculator
+```
+
+Commands:
+
 ```pip install uv```
 
 ```uv init AI_TRIP_PLANNER```
