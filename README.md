@@ -7,6 +7,7 @@ LLM model performs various API calls to generate final output:
 - Currency converter API
 - Overall expense calculator
 ```
+Demo pdf for entire LLM response is present in pdf: AI_trip_planner_demo
 
 ![UI](image.png)
 
