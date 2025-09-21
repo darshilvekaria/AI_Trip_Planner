@@ -1,11 +1,3 @@
-
-```uv --version
-```
-
-
-```import shutil
-print(shutil.which("uv"))```
-
 ```pip install uv```
 
 ```uv init AI_TRIP_PLANNER```
@@ -20,9 +12,6 @@ print(shutil.which("uv"))```
 
 ```uv venv env --python cpython-3.10.18-windows-x86_64-none```
 
- Go to venv if not actiavted automatically
-
-```uv add pandas```
 
 #if you have conda then first deactivate that
 ```conda deactivate```
@@ -30,21 +19,18 @@ print(shutil.which("uv"))```
 ```uv venv env --python cpython-3.10.18-windows-x86_64-none```
 
 ## use this command from your virtual env
-activate venv: .\.venv\Scripts\activate
+activate venv: ```.\.venv\Scripts\activate```
 
 ```
 uv pip install -r .\requirements.txt
 ```
-
 ```
 streamlit run streamlit_app.py
 ```
-
 ```
 uvicorn main:app --reload --port 8000
 ```
-
-
+```
 flowchart 
     A[NODE / EDGE] --> B[LangGraph]
     B --> C[Backend]
@@ -53,3 +39,4 @@ flowchart
     C --> C3[Tools]
     B --> D[FastAPI (API Endpoint)]
     D --> E[Streamlit (UI)]
+```
