@@ -8,6 +8,9 @@ LLM model performs various API calls to generate final output:
 - Overall expense calculator
 ```
 
+![UI](image.png)
+
+
 Commands:
 
 ```pip install uv```
