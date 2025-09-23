@@ -1,5 +1,5 @@
 ```
-This is an Agentic AI project that uses Langgraph for planning a complete E2E trip to any countries based on number of days, its up to date currency rate and best places to visit within that country.
+This is an AI agent that uses Langgraph for planning a complete E2E trip to any countries based on number of days, its up to date currency rate and best places to visit within that country.
 
 LLM model performs various API calls to generate final output:
 - Weather API (current and forecasted weather)
