@@ -1,17 +1,24 @@
 ```
-This is an AI agent that uses Langgraph for planning a complete E2E trip to any countries based on number of days, its up to date currency rate and best places to visit within that country.
+This project implements a ReAct (Reason + Act + Observe) style conversational agent using LangGraph for planning a complete E2E trip to any countries based on number of days, its up to date currency rate and best places to visit within that country with detailed cost.
 
-LLM model performs various API calls to generate final output:
-- Weather API (current and forecasted weather)
-- Places search using google places API or Tavily search API
-- Currency converter API
-- Overall expense calculator
+ - The agent node (LLM) reasons step-by-step about user queries.
+ - If a tool is needed, it emits a tool call (Act).
+ - The tool node executes the API/tool and returns the result (Observation).
+ - The observation is added back into the conversation, and the agent re-evaluates.
+ - This loop continues until the agent produces a final answer without further tool use.
+
+Currently integrated tools:
+ - WeatherInfoTool — fetches weather data
+ - PlaceSearchTool — searches for locations/attractions
+ - CalculatorTool — performs expense calculations
+ - CurrencyConverterTool — converts between currencies
+
+This structure ensures dynamic, multi-step reasoning where the agent can combine multiple tool calls before giving a final response.
 ```
-Demo view for entire LLM response is present in pdf: AI_trip_planner_demo. 
-Sample as below:
 
-![UI](image.png)
 
+Demo view for entire LLM response is present in pdf: response_view. 
+detailed log how ReAct agent worked is present in txt file: detailed_log_for_generating_response 
 
 Commands:
 
@@ -47,13 +54,26 @@ streamlit run streamlit_app.py
 ```
 uvicorn main:app --reload --port 8000
 ```
+
 ```
-flowchart 
-    A[NODE / EDGE] --> B[LangGraph]
-    B --> C[Backend]
-    C --> C1[Config]
-    C --> C2[Model]
-    C --> C3[Tools]
-    B --> D[FastAPI (API Endpoint)]
-    D --> E[Streamlit (UI)]
+Flowchart:
+
+START
+  │
+  ▼
+Agent (LLM)
+  │
+  ├── Tool call (e.g., Weather, Place Search, Calculator, Currency Conversion)
+  ▼
+Tools (executes and returns results)
+  │
+  ▼
+Agent (reasons again with results)
+  │
+  └── (loop repeats if more tools are needed)
+  ▼
+Agent produces Final Answer
+  │
+  ▼
+END
 ```
