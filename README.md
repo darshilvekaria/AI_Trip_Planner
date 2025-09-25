@@ -21,6 +21,31 @@ Demo view for entire LLM response is present in pdf: response_view.
 Detailed log about how ReAct agent performed api calls is present in txt file: detailed_log_for_generating_response 
 ```
 
+
+```
+Flowchart:
+
+START
+  │
+  ▼
+Agent (LLM)
+  │
+  ├── Tool call (e.g., Weather, Place Search, Calculator, Currency Conversion)
+  ▼
+Tools (executes and returns results)
+  │
+  ▼
+Agent (reasons again with results)
+  │
+  └── (loop repeats if more tools are needed)
+  ▼
+Agent produces Final Answer
+  │
+  ▼
+END
+```
+
+
 Commands:
 
 ```pip install uv```
@@ -52,26 +77,3 @@ activate venv: ```.\.venv\Scripts\activate```
 ```streamlit run streamlit_app.py```
 
 ```uvicorn main:app --reload --port 8000```
-
-```
-Flowchart:
-
-START
-  │
-  ▼
-Agent (LLM)
-  │
-  ├── Tool call (e.g., Weather, Place Search, Calculator, Currency Conversion)
-  ▼
-Tools (executes and returns results)
-  │
-  ▼
-Agent (reasons again with results)
-  │
-  └── (loop repeats if more tools are needed)
-  ▼
-Agent produces Final Answer
-  │
-  ▼
-END
-```
