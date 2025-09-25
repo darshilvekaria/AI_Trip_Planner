@@ -4,4 +4,5 @@ llm:
     model_name: "o4-mini"
   groq:
     provider: "groq"
-    model_name: "llama-3.1-8b-instant"
+    model_name: "moonshotai/kimi-k2-instruct-0905"
+    # model_name: "llama-3.1-8b-instant"

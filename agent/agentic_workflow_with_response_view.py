@@ -63,8 +63,10 @@ class GraphBuilder():
 
         # Case 2 or 3: No tool call → final answer
         else:
-            # If last message in state was a ToolMessage → final answer after tool use
+            # If last message in state was a ToolMessage → print tool output
             if state["messages"] and isinstance(state["messages"][-1], ToolMessage):
+                tool_msg = state["messages"][-1]
+                print(f"[Tool Output from {tool_msg.tool_call_id}]: {tool_msg.content}")
                 print("[Final Answer after tool use]:", response.content)
             else:
                 print("[Final Answer without tool use]:", response.content)
