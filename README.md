@@ -16,9 +16,10 @@ Currently integrated tools:
 This structure ensures dynamic, multi-step reasoning where the agent can combine multiple tool calls before giving a final response.
 ```
 
-
+```
 Demo view for entire LLM response is present in pdf: response_view. 
 detailed log how ReAct agent worked is present in txt file: detailed_log_for_generating_response 
+```
 
 Commands:
 
@@ -37,23 +38,20 @@ Commands:
 ```uv venv env --python cpython-3.10.18-windows-x86_64-none```
 
 
-#if you have conda then first deactivate that
+if you have conda then first deactivate that
 ```conda deactivate```
 
 ```uv venv env --python cpython-3.10.18-windows-x86_64-none```
 
-## use this command from your virtual env
+use this command from your virtual env
+
 activate venv: ```.\.venv\Scripts\activate```
 
-```
-uv pip install -r .\requirements.txt
-```
-```
-streamlit run streamlit_app.py
-```
-```
-uvicorn main:app --reload --port 8000
-```
+```uv pip install -r .\requirements.txt```
+
+```streamlit run streamlit_app.py```
+
+```uvicorn main:app --reload --port 8000```
 
 ```
 Flowchart:
