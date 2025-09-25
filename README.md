@@ -18,7 +18,7 @@ This structure ensures dynamic, multi-step reasoning where the agent can combine
 
 ```
 Demo view for entire LLM response is present in pdf: response_view. 
-detailed log how ReAct agent worked is present in txt file: detailed_log_for_generating_response 
+Detailed log about how ReAct agent performed api calls is present in txt file: detailed_log_for_generating_response 
 ```
 
 Commands:
